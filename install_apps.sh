@@ -4,8 +4,7 @@ name=$(cat /tmp/user_name)
 
 # Getting app list
 apps_path="/tmp/apps.csv"
-curl https://raw.githubusercontent.com/JNickuser\
-    /arch_installer/master/apps.csv > $apps_path
+curl https://raw.githubusercontent.com/JNickuser/arch_installer/master/apps.csv > $apps_path
 
 # Listing apps and letting user select them
 dialog --title "Welcome!" \
