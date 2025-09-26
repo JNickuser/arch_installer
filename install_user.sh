@@ -9,7 +9,7 @@ aur_install() {
     curl -O "https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz" \
         && tar -xvf "$1.tar.gz" \
         && cd "$1" \
-        && makepkg --noconfirm -SsCci \
+        && makepkg -SsCci --noconfirm  \
         && cd - \
         && rm -rf "$1" "$1.tar.gz" ;
 }
@@ -31,7 +31,7 @@ dialog --infobox "Installing \"Yay\", an AUR helper..." 10 60
 aur_check yay
 
 # Installing remaining packages
-count=#(wc -l > /tmp/aur_queue)
+count=$(wc -l > /tmp/aur_queue)
 c=0
 
 cat /tmp/aur_queue | while read -r line

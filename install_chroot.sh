@@ -8,7 +8,7 @@ hd=$(cat /var_hd)
 cat /comp > /etc/hostname && rm /comp
 
 # Installing GRUB
-pacman --noconfirm -S dialog
+pacman --noconfirm -Syu dialog
 
 pacman --noconfirm -S grub
 
@@ -24,14 +24,13 @@ fi
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Setting hardware clock from system clock
-hwclock --systohc
-
 timedatectl set-timezone "America/Bogota"
+hwclock --systohc
 
 # Configurind the Locales
 echo "en_US.UTF-8" >> /etc/locale.gen
 locale-gen
-echo "LANG=en_US.UTF-8 UTF-8" > /etc/locale.conf
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "KEYMAP=la-latin1" > /etc/vconsole.conf
 
 # User creation

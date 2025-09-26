@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # Never run pacman -Sy on your system!
 pacman --noconfirm -Sy dialog
@@ -22,13 +23,14 @@ uefi=0
 ls /sys/firmware/efi/efivars 2> /dev/null && uefi=1
 
 # Choosing the hard disk
-device_list=($(lsblk -d | awk '{print "/dev/" $1 " " $4 " on"}' | grep -E 'sd|hd|vd|nvme|mmcblk'))
+device_list=($(lsblk -dno NAME,SIZE | awk '{print "/dev/" $1 " " $4 " on"}' \
+    | grep -E 'sd|hd|vd|nvme|mmcblk'))
 
 dialog --title "Choose your hard driver" --no-cancel --radiolist \
     "Where do you want to install your new system? \n\n\
     Select with SPACE, valid with ENTER. \n\n\
     WARNING: Everything will be DESTROYED on the hard disk!" \
-    15 60 4 "{device_list[@]}" 2> hd
+    15 60 4 "${device_list[@]}" 2> hd
 
 hd=$(cat hd) && rm hd
 
@@ -120,11 +122,15 @@ if [ "$uefi" = 1 ]; then
     mkfs.fat -F32 "${hd}1"
     mkdir -p /mnt/boot/efi
     mount "${hd}1" /mnt/boot/efi
+else
+    mkfs.ext4 "${hd}1"
+    mkdir -p /mnt/boot
+    mount "${hd}1" /mnt/boot
 fi
 
 # Generating fstab and installing arch
 pacstrap -K /mnt base base-devel linux linux-firmware
-genfastab -U /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
 
 # Persist important values for the next script
 echo "$uefi" > /mnt/var_uefi
@@ -132,7 +138,7 @@ echo "$hd" > /mnt/var_hd
 mv comp /mnt/comp
 
 # Getting the next script to run
-curl https://raw.githubussercontent.com/JNickuser/arch_installer/master/install_chroot.sh \
+curl https://raw.githubusercontent.com/JNickuser/arch_installer/master/install_chroot.sh \
     > /mnt/install_chroot.sh
 
 # Chrooting and running the script getted

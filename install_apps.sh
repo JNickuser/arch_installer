@@ -37,7 +37,7 @@ dialog --checklist \
     0 0 0 \
     "${apps[@]}" 2> app_choices
 
-choices=$(cat app_choices) && rm app_choicesdialog --checklist \
+dialog --checklist \
     "You can now choose what group of apps you want to install. \n\n\
     You can select an option with SPACE and valid your choices with ENTER." \
     0 0 0 \
@@ -46,7 +46,7 @@ choices=$(cat app_choices) && rm app_choicesdialog --checklist \
 choices=$(cat app_choices) && rm app_choices
 
 # Parsing the CSV
-selection="^$(echo $choices | sed -e 's/ /,|^/g'),"
+selection="^$(echo "$choices" | sed -e 's/ /,|^/g'),"
 lines=$(grep -E "$selection" "$apps_path")
 count=$(echo "$lines" | wc -l)
 packages=$(echo "$lines" | awk -F, {'print $2'})
@@ -65,7 +65,7 @@ dialog --title "Let's go!" --msgbox \
     60
 
 c=0
-echo "$packages" | while read -r line; do
+while read -r line; do
     c=$(( "$c" + 1 ))
 
     dialog --title "Arch Linux Installation" --infobox \
@@ -81,18 +81,18 @@ echo "$packages" | while read -r line; do
         chsh -s "$(which zsh)" "$name"
     fi
 
-    if [ "$line" = "$networkmanager" ]; then
+    if [ "$line" = "networkmanager" ]; then
         # Enable the service NetworkManager for systemd
         systemctl enable NetworkManager.service
     fi
-done
+done <<< "$packages"
 
 # Adding permission to sudo
-echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
+echo "%wheel ALL=(ALL) ALL" | EDITOR='tee -a' visudo
 
 # Getting the next script to run
 curl https://raw.githubusercontent.com/JNickuser\
     /arch_installer/master/install_user.sh > /tmp/install_user.sh;
 
 #Switch user and run the final script
-sudo -u "$name" sh /tmp/install_user.sh
+sudo -u "$name" bash /tmp/install_user.sh
