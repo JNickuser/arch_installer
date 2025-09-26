@@ -84,7 +84,7 @@ root_partition_type=23
 # e - extended partition
 # w - write the table to disk and exit
 partprobe "$hd"
-fdisk "$hd" << EOF
+fdisk "$hd" <<EOF
 g
 n
 
