@@ -1,0 +1,69 @@
+Group ID,Package name,Package Description
+essential,xorg,X server
+essential,xorg-xinit,Display server boot
+essential,man,Manual
+essential,man-pages,Manual pages
+essential,arch-wiki-docs,Arch Linux offline documentation
+network,openssh,Remote login tool for SSH protocol
+network,networkmanager,Network manager
+network,usb_modeswitch,Share android network connection by USB
+network,speedtest-cli,Speedtest CLI
+tools,rsync,Synchronizing files across computers
+tools,arandr,xrandr GUI
+tools,xsel,Manipulate the X selection
+tools,fzf,Command line fuzzy finder
+tools,scrot,Screenshot software
+tools,tldr,Display simple help pages for commands
+tools,udiskie,Automount devices
+tools,udisks2,Mount/umount devices
+tools,translate-shell,Google translate CLI
+tools,ripgrep,Faster alternative to grep
+tools,unrar,Utility to extract rar files
+tools,unzip,Utility to extract zip files
+tools,tlp,Laptop power settings
+tools,numlockx,Utility to control numlock behavior
+tools,brightnessctl,Control screen brightness from CLI
+tools,btop,Interactive process viewer
+tools,fastfetch,Display information about your OS
+FsSupport,btrfs-progs,Support for BTRFS
+FsSupport,dosfstools,Support for DOS file system
+FsSupport,e2fsprogs,Support for e2fs
+FsSupport,exfatprogs,Support for exfat
+FsSupport,f2fs-tools,Support for f2fs
+FsSupport,ntfs-3g,Support for NTFS file system
+FsSupport,udftools,Support for udf format
+fonts,ttf-0xproto-nerd,0xProtoNerd font
+tmux,tmux,Terminal multiplexer
+tmux,tmuxp,Configure tmux session + windows + panes via config files
+notifier,dunst,Notification system
+notifier,libnotify,Notifier
+git,git,Version control system
+git,github-cli,Manage github account from CLI
+git,diff-so-fancy,Human readable git diff
+i3,i3-wm,i3 window tile manager
+i3,i3status,i3 status bar
+i3,i3lock,i3 lock monitor
+i3,dmenu,Dynamic menu for X
+i3,feh,X11 image viewer
+i3,xss-lock,X screen saver
+i3,imagemagick,Utility to display and modify bitmap images
+zsh,zsh,Unix shell (Z-Shell)
+zsh,zsh-completions,Additional completions for Zsh
+zsh,zsh-syntax-highlighting,Syntax highlighting for ZSH
+neovim,neovim,Editor... and much more
+neovim,python-neovim,Python for neovim
+urxvt,rxvt-unicode,Terminal Urxvt
+urxvt,urxvt-tabbedex-mina86-git,Improved tabs for Urxvt (AUR)
+firefox,firefox,Browser Firefox
+office,libreoffice-fresh,LibreOffice suite
+office,zathura-pdf-mupdf,PDF/EPUB document viewer
+design,inkscape,Vector design program
+design,gimp,GNU image manipulator
+multimedia,yt-dlp,Youtube video downloader
+multimedia,mpv,Video Player
+multimedia,pipewire,Pipewire media server
+multimedia,pipewire-alsa,Pipewire ALSA support
+multimedia,pipewire-docs,Pipewire doc pages
+multimedia,playerctl,Multimedia control from keyboard
+social,discord,Discord desktop app
+anki,anki-bin,Anki flashcard program (AUR)
