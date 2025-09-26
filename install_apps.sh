@@ -91,8 +91,8 @@ done <<< "$packages"
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 
 # Getting the next script to run
-curl https://raw.githubusercontent.com/JNickuser\
-    /arch_installer/master/install_user.sh -o /tmp/install_user.sh
+curl https://raw.githubusercontent.com/JNickuser/arch_installer/master/install_user.sh \
+    -o /tmp/install_user.sh
 
 #Switch user and run the final script
 sudo -u "$name" bash /tmp/install_user.sh
