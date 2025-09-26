@@ -9,7 +9,7 @@ aur_install() {
     curl -O "https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz" \
         && tar -xvf "$1.tar.gz" \
         && cd "$1" \
-        && makepkg -SsCci --noconfirm  \
+        && makepkg -si --noconfirm  \
         && cd - \
         && rm -rf "$1" "$1.tar.gz" ;
 }
