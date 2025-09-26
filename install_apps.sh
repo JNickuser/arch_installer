@@ -37,12 +37,6 @@ dialog --checklist \
     0 0 0 \
     "${apps[@]}" 2> app_choices
 
-dialog --checklist \
-    "You can now choose what group of apps you want to install. \n\n\
-    You can select an option with SPACE and valid your choices with ENTER." \
-    0 0 0 \
-    "${apps[@]}" 2> app_choices
-
 choices=$(cat app_choices) && rm app_choices
 
 # Parsing the CSV
