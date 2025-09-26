@@ -75,6 +75,8 @@ eraseDisk "$hderaser"
 # Creating partitions
 boot_partition_type=1
 [[ "$uefi" == 0 ]] && boot_partition_type=4
+swap_partition_type=19
+root_partition_type=23
 
 # g - creaet non empty GPT partition table
 # n - create new partition
@@ -94,10 +96,16 @@ n
 
 
 +${size}GiB
+t
+
+$swap_partition_type
 n
 
 
 
+t
+
+$root_partition_type
 w
 EOF
 partprobe "$hd"
