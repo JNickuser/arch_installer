@@ -23,8 +23,7 @@ uefi=0
 ls /sys/firmware/efi/efivars 2> /dev/null && uefi=1
 
 # Choosing the hard disk
-device_list=($(lsblk -dno NAME,SIZE | awk '{print "/dev/" $1 " " $4 " on"}' \
-    | grep -E 'sd|hd|vd|nvme|mmcblk'))
+device_list=($(lsblk -d | awk '{print "/dev/" $1 " " $4 " on"}' | grep -E 'sd|hd|vd|nvme|mmcblk'))
 
 dialog --title "Choose your hard driver" --no-cancel --radiolist \
     "Where do you want to install your new system? \n\n\
