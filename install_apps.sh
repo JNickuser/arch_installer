@@ -4,7 +4,7 @@ name=$(cat /tmp/user_name)
 
 # Getting app list
 apps_path="/tmp/apps.csv"
-curl https://raw.githubusercontent.com/JNickUser\
+curl https://raw.githubusercontent.com/JNickuser\
     /arch_installer/master/apps.csv > $apps_path
 
 # Listing apps and letting user select them
@@ -91,7 +91,7 @@ done
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 
 # Getting the next script to run
-curl https://raw.githubusercontent.com/JNickUser\
+curl https://raw.githubusercontent.com/JNickuser\
     /arch_installer/master/install_user.sh > /tmp/install_user.sh;
 
 #Switch user and run the final script

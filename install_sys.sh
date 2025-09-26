@@ -125,7 +125,7 @@ echo "$hd" > /mnt/var_hd
 mv comp /mnt/comp
 
 # Getting the next script to run
-curl https://raw.githubussercontent.com/JNickUser/arch_installer/master/install_chroot.sh \
+curl https://raw.githubussercontent.com/JNickuser/arch_installer/master/install_chroot.sh \
     > /mnt/install_chroot.sh
 
 # Chrooting and running the script getted
