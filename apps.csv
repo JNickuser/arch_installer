@@ -3,6 +3,7 @@ essential,xorg,X server
 essential,xorg-xinit,Display server boot
 essential,man,Manual
 essential,man-pages,Manual pages
+essential,pacman-contrib,Provides other useful tools for pacman
 essential,arch-wiki-docs,Arch Linux offline documentation
 network,openssh,Remote login tool for SSH protocol
 network,networkmanager,Network manager
