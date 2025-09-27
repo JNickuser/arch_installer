@@ -28,15 +28,15 @@ timedatectl set-timezone "America/Bogota"
 hwclock --systohc
 
 # Configuring the Locales
-echo "en_US.UTF-8" >> /etc/locale.gen
-echo "es_CO.UTF-8" >> /etc/locale.gen
-locale-gen
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+echo "es_CO.UTF-8 UTF-8" >> /etc/locale.gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "KEYMAP=la-latin1" > /etc/vconsole.conf
 echo "XKBLAYOUT=latam" >> /etc/vconsole.conf
 echo "XKBMODEL=pc105" >> /etc/vconsole.conf
 echo "XKVARIANT=,qwerty" >> /etc/vconsole.conf
 echo "XKBOPTIONS=terminate:ctrl_alt_bksp" >> /etc/vconsole.conf
+locale-gen
 #localectl set-x11-keymap latam pc105 ,qwerty terminate:ctrl_alt_bksp
 
 # User creation
