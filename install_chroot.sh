@@ -27,11 +27,17 @@ grub-mkconfig -o /boot/grub/grub.cfg
 timedatectl set-timezone "America/Bogota"
 hwclock --systohc
 
-# Configurind the Locales
+# Configuring the Locales
 echo "en_US.UTF-8" >> /etc/locale.gen
+echo "es_CO.UTF-8" >> /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "KEYMAP=la-latin1" > /etc/vconsole.conf
+echo "XKBLAYOUT=latam" >> /etc/vconsole.conf
+echo "XKBMODEL=pc105" >> /etc/vconsole.conf
+echo "XKVARIANT=,qwerty" >> /etc/vconsole.conf
+echo "XKBOPTIONS=terminate:ctrl_alt_bksp" >> /etc/vconsole.conf
+#localectl set-x11-keymap latam pc105 ,qwerty terminate:ctrl_alt_bksp
 
 # User creation
 function config_user() {
