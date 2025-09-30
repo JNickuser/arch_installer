@@ -20,6 +20,7 @@ tools,udisks2,Mount/umount devices
 tools,translate-shell,Google translate CLI
 tools,ripgrep,Faster alternative to grep
 tools,unrar,Utility to extract rar files
+tools,7zip,Utility to work with 7z files and other formats
 tools,unzip,Utility to extract zip files
 tools,tlp,Laptop power settings
 tools,numlockx,Utility to control numlock behavior
