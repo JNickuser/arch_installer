@@ -9,6 +9,9 @@ network,openssh,Remote login tool for SSH protocol
 network,networkmanager,Network manager
 network,usb_modeswitch,Share android network connection by USB
 network,speedtest-cli,Speedtest CLI
+bluetooth,bluez,Provides the bluetooth protocol stack
+bluetooth,bluez-libs,Libraries for bluez
+bluetooth,bluez-utils,Provides bluetoothctlctl utility
 tools,rsync,Synchronizing files across computers
 tools,arandr,xrandr GUI
 tools,xsel,Manipulate the X selection

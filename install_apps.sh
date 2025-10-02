@@ -13,6 +13,7 @@ dialog --title "Welcome!" \
 
 apps=("essential" "Essentials" on
     "network" "Network" on
+    "bluetooth" "Bluetooth support utilities" on
     "tools" "Useful tools to have" on
     "FsSupport" "Different file system support" on
     "fonts" "Nice fonts to have" on
