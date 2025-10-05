@@ -67,8 +67,12 @@ design,gimp,GNU image manipulator
 multimedia,yt-dlp,Youtube video downloader
 multimedia,mpv,Video Player
 multimedia,pipewire,Pipewire media server
+multimedia,pipewire-pulse,Pipewire replacement of Pulseaudio
 multimedia,pipewire-alsa,Pipewire ALSA support
 multimedia,pipewire-docs,Pipewire doc pages
+multimedia,rtkit,Installed as dependency for pipewire to support rt module
 multimedia,playerctl,Multimedia control from keyboard
+multimedia,sof-firmware,Sound Open Firmware
+multimedia,alsa-utils,ALSA Utilities
 social,discord,Discord desktop app
 anki,anki-bin,Anki flashcard program (AUR)
