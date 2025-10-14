@@ -73,6 +73,7 @@ multimedia,pipewire-docs,Pipewire doc pages
 multimedia,rtkit,Installed as dependency for pipewire to support rt module
 multimedia,playerctl,Multimedia control from keyboard
 multimedia,sof-firmware,Sound Open Firmware
+multimedia,alsa-firmware,ALSA Firmware
 multimedia,alsa-utils,ALSA Utilities
 social,discord,Discord desktop app
 anki,anki-bin,Anki flashcard program (AUR)
